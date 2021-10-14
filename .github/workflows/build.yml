@@ -12,7 +12,7 @@ jobs:
     test:
         strategy:
             matrix:
-                go-version: [ 1.16.x, 1.15.x, 1.14.x, 1.13.x ]
+                go-version: [ 1.16.x, 1.15.x ]
                 platform: [ ubuntu-latest, macos-latest, windows-latest ]
         runs-on: ${{ matrix.platform }}
         steps:
@@ -87,7 +87,7 @@ jobs:
             badge-codecov: 'true'
             badge-godoc: 'true'
             email: 'justin@dynam.ac'
-            title: 'Go-LogAdapter'
+            title: 'restic-nats'
             # Optional: Token allows goreadme to comment the PR with diff preview.
             github-token: '${{ secrets.GITHUB_TOKEN }}'
             
