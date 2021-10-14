@@ -3,6 +3,7 @@ package rns
 import (
 	"context"
 	"io"
+	"io/ioutil"
 )
 
 func (rns *ResticNatsClient) OpenRepo(ctx context.Context, hostname string) (OpenRepoResult, error) {
@@ -73,7 +74,7 @@ func (rns *ResticNatsClient) Load(ctx context.Context, dir string, filename stri
 func (rns *ResticNatsClient) Save(ctx context.Context, dir string, filename string, rd io.Reader) (SaveResult, error) {
 	var err error
 	op := SaveOp{Dir: dir, Name: filename}
-	op.Data, err = io.ReadAll(rd)
+	op.Data, err = ioutil.ReadAll(rd)
 	if err != nil {
 		rns.logger.Error("ReadAll Failed: %s", err)
 		return SaveResult{}, err
