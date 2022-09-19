@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Fishwaldo/go-logadapter v0.0.2
-	github.com/nats-io/nats.go v1.13.0
+	github.com/nats-io/nats.go v1.17.0
 	github.com/pkg/errors v0.9.1
 )
 
